@@ -1,8 +1,10 @@
 [package]
 name = "rochiver"
-version = "0.0.1"
+version = "0.0.3"
 edition = "2021"
 
 [dependencies]
-dotenv = "0.15.0"
+config = "0.15.11"
+lazy_static = "1.5.0"
+serde = { version = "1.0.219", features = ["derive"] }
 ureq = { version = "3.0.11", features = ["json"] }

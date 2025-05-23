@@ -1,3 +1,12 @@
+
+mod components;
+mod config;
+
 fn main() {
-    println!("Hello, world!");
+    
+
+
 }
+
+// project made by thecasualdev ⚡
+

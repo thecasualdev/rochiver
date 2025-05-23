@@ -19,6 +19,9 @@ target/
 # env files
 .env
 
+# app config files
+rochiver.toml
+
 # Added by cargo
 
 /target
