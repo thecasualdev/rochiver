@@ -45,8 +45,12 @@ fn main() {
     );
 
     if components::check_group::verify(group_id) {
-        rprintln!("Yay! 🎉")
+        components::fetch_wall::fetch();
     } else {
+        rprintln!(
+            "{}",
+            "Could not verify group, closing app".red().bold()
+        );
         exit(0)
     }
 
