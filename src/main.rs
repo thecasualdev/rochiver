@@ -45,9 +45,9 @@ fn main() {
     );
 
     if components::check_group::verify(group_id) {
-        print!("Yay! 🎉")
+        rprintln!("Yay! 🎉")
     } else {
-        exit(1)
+        exit(0)
     }
 
 }

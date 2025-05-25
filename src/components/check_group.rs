@@ -35,6 +35,12 @@ pub fn verify(group_id: &str) -> bool  {
 
                         return true;
                     } else {
+
+                        rprintln!(
+                            "{}",
+                            format!("Could not verify group.").red()
+                        );
+
                         return false;
                     }
 
@@ -51,12 +57,23 @@ pub fn verify(group_id: &str) -> bool  {
             }
         },
         Err(Error::StatusCode(code)) => {
-            rprintln!(
-                "{}",
-                format!(
-                    "[ERROR] could not verify group, got {code}"
-                ).red()
-            ); 
+            
+            if code == 429 {
+                rprintln!(
+                    "{}",
+                    format!(
+                        "[ERROR] : [{code}] Too many requests."
+                    ).red()
+                );
+            } else {
+                rprintln!(
+                    "{}",
+                    format!(
+                        "[ERROR] could not verify group, got {code}"
+                    ).red()
+                );
+            }   
+
             return false;
         }
         Err(e) => {
