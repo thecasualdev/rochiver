@@ -44,12 +44,13 @@ fn main() {
         "Verifying group ID".green()
     );
 
+    
     if components::check_group::verify(group_id) {
-        components::fetch_wall::fetch();
+        components::fetch_wall::fetch(group_id);
     } else {
         rprintln!(
             "{}",
-            "Could not verify group, closing app".red().bold()
+            "Could not verify group, closing app".red()
         );
         exit(0)
     }

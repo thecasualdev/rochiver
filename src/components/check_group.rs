@@ -3,7 +3,7 @@ use crate::rprintln;
 use serde::Deserialize;
 use ureq::Error;
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize)]
 struct Group {
     #[allow(dead_code)]
     id: u64,
